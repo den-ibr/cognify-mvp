@@ -9,7 +9,7 @@ const yesterday = yesterdayDate.toISOString().split('T')[0];
 export default class Streak {
     constructor() {
         this.streak = Storage.streak;
-        this.lastDate = localStorage.getItem('lastDate');
+        this.lastDate = Storage.lastDate;
         this.streakElement = document.getElementById('streak');
         this.fireElement = document.getElementById('fire-icon');
 
@@ -39,6 +39,7 @@ export default class Streak {
         this.streak++;
         this.streakElement.innerText = this.streak;
         this.lastDate = currentDate;
+        Storage.lastDate = this.lastDate;
         this.makeOrange();
         Storage.streak = this.streak;
     }
