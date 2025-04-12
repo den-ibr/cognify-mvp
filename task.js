@@ -38,7 +38,7 @@ export default class Task {
             container.insertBefore(partContainer, footer);
         }
 
-        // MathJax.typesetPromise();
+        MathJax.typesetPromise();
         this.hintButton.onclick = this._displayNextPart.bind(this);
 
         this._renderHintButton();
