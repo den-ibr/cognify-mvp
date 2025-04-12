@@ -1,4 +1,4 @@
-import Storage from './storage.js';
+import UserStorage from './storage.js';
 
 const currentDate = new Date().toISOString().split('T')[0];
 const yesterdayDate = new Date();
@@ -8,8 +8,8 @@ const yesterday = yesterdayDate.toISOString().split('T')[0];
 
 export default class Streak {
     constructor() {
-        this.streak = Storage.streak;
-        this.lastDate = Storage.lastDate;
+        this.streak = UserStorage.streak;
+        this.lastDate = UserStorage.lastDate;
         this.streakElement = document.getElementById('streak');
         this.fireElement = document.getElementById('fire-icon');
 
@@ -19,8 +19,7 @@ export default class Streak {
 
         if (this.lastDate !== yesterday && this.lastDate !== currentDate) {
             this.streak = 0;
-            console.log(currentDate);
-            Storage.streak = this.streak;
+            UserStorage.streak = this.streak;
         }
 
         this.streakElement.innerText = this.streak;
@@ -31,7 +30,7 @@ export default class Streak {
         this.fireElement.src = 'assets/fluent-emoji/fire.png';
     }
 
-    safeIncrement() {
+    incrementIfNeeded() {
         if (this.lastDate === currentDate) {
             return;
         }
@@ -39,8 +38,8 @@ export default class Streak {
         this.streak++;
         this.streakElement.innerText = this.streak;
         this.lastDate = currentDate;
-        Storage.lastDate = this.lastDate;
+        UserStorage.lastDate = this.lastDate;
         this.makeOrange();
-        Storage.streak = this.streak;
+        UserStorage.streak = this.streak;
     }
 }

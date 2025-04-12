@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Тест",
+        "complexity": 1,
+        "answer": 42,
+        "source": "https://example.com/test"
+    },
+    {
+        "id": 2,
+        "name": "Задачанейм",
+        "complexity": 3,
+        "answer": 282,
+        "source": "https://example.com/test"
+    }
+]

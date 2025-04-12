@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Cognify</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="taskStyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="header-left">
+                <img src="assets/logo.svg" alt="Cognify logo">
+                <p class="inter-medium header-text" style="cursor: default;">Cognify</p>
+                <a href="index.html" class="inter-medium header-text">Задачи</a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="inter-medium header-text grey">О проекте</a>
+            </div>
+            <div id="header-right">
+                <div id="fire-container">
+                    <img id="fire-icon" src="assets/fluent-emoji/monochrome-fire.png" class="icon24" alt="Fire icon">
+                    <p id="streak" class="inter-semibold header-text grey">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-content">
+            <div id="task-header">
+                <a href="/" class="black-circle-button">
+                    <img id="go-back" class="icon20" src="assets/lucide-icons/arrow-left-white.svg" alt="Go back">
+                </a>
+                <div class="circled-container" id="task-name-container">
+                    <p id="task-name" class="inter-medium"></p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="circled-container blue-button">
+                    <p class="inter-medium">Источник</p>
+                </a>
+            </div>
+            <div id="task-content">
+                <p id="task-text" class="inter-regular"></p>
+                <div id="task-content-footer">
+                    <form id="submit-answer" class="horizontal-container">
+                        <input id="answer" class="circled-container inter-regular" placeholder="Введите ответ">
+                        <button id="submit" class="black-circle-button">
+                            <img class="icon20" src="assets/lucide-icons/arrow-right-white.svg" alt="submit">
+                        </button>
+                    </form>
+                    <div>
+                        <button id="hint-button" class="circled-container blue-button inter-regular" disabled>Подсказка</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="right-menu">
+                <div id="user-profile">
+                    <div class="two-value-table-row">
+                        <div id="profile-header-left">
+                            <img id="profile-pic" class="icon40" src="assets/fluent-emoji/grape.png" alt="Profile picture">
+                            <p id="username" class="inter-medium header-text">Гость</p>
+                            <img id="edit-username" style="cursor: grab;" src="assets/lucide-icons/square-pen.svg" alt="Edit username">
+                        </div>
+                        <div class="gems-container">
+                            <img src="assets/fluent-emoji/gem.png" class="icon24" alt="Gem icon">
+                            <p id="gems" class="inter-medium header-text blue">0</p>
+                        </div>
+                    </div>
+                    <p class="inter-medium header-text">Статистика по задачам</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="taskScreen.js" type="module"></script>
+</body>
+
+</html>

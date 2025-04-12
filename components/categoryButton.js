@@ -1,8 +1,9 @@
-import Storage from "../storage.js";
+import UserStorage from "../storage.js";
+import TaskList from "./taskList.js";
 
 export default class CategoryButton {
     static create(name, folderName) {
-        const selectedCategory = Storage.selectedCategory;
+        const selectedCategory = UserStorage.selectedCategory;
         const button = document.createElement('button');
         const categoryId = `category-${folderName}`;
         button.classList.add('category-button');
@@ -19,12 +20,13 @@ export default class CategoryButton {
     static _addListener(button) {
         const id = button.id;
         button.addEventListener('click', () => {
-            Storage.selectedCategory = id;
+            UserStorage.selectedCategory = id;
             const buttons = document.getElementsByClassName('category-button');
             for (const button of buttons) {
                 button.classList.remove('selected');
             }
             document.getElementById(id).classList.add('selected');
+            TaskList.render();
         });
     }
 }
