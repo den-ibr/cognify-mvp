@@ -13,16 +13,7 @@ export default class Streak {
         this.streakElement = document.getElementById('streak');
         this.fireElement = document.getElementById('fire-icon');
 
-        if (this.lastDate === currentDate) {
-            this.makeOrange();
-        }
-
-        if (this.lastDate !== yesterday && this.lastDate !== currentDate) {
-            this.streak = 0;
-            UserStorage.streak = this.streak;
-        }
-
-        this.streakElement.innerText = this.streak;
+       this.render();
     }
 
     makeOrange() {
@@ -36,10 +27,23 @@ export default class Streak {
         }
 
         this.streak++;
-        this.streakElement.innerText = this.streak;
         this.lastDate = currentDate;
         UserStorage.lastDate = this.lastDate;
-        this.makeOrange();
         UserStorage.streak = this.streak;
+
+        this.render();
+    }
+
+    render() {
+        if (this.lastDate === currentDate) {
+            this.makeOrange();
+        }
+
+        if (this.lastDate !== yesterday && this.lastDate !== currentDate) {
+            this.streak = 0;
+            UserStorage.streak = this.streak;
+        }
+
+        this.streakElement.innerText = this.streak;
     }
 }

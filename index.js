@@ -4,7 +4,6 @@ import TaskList from './components/taskList.js';
 import User from './user.js';
 
 const urlParams = new URLSearchParams(window.location.search);
-const taskId = urlParams.get('id');
 
 await TaskStorage.ready();
 const categories = TaskStorage.categories;

@@ -42,8 +42,8 @@ export default class Task {
             container.insertBefore(partContainer, footer);
         }
 
-        while (!(window.MathJax && MathJax.typesetPromise)) {}
-        MathJax.typesetPromise();   
+        while (!(window.MathJax && MathJax.typesetPromise)) { }
+        MathJax.typesetPromise();
         this.hintButton.onclick = this._displayNextPart.bind(this);
 
         this._renderHintButton();
@@ -99,6 +99,7 @@ export default class Task {
         if (this.input.value == this.answer) {
             if (UserStorage.addSolvedTask(this.id, this.category)) {
                 User.gems += TaskRewards[this.complexity];
+                User.streak.incrementIfNeeded();
             }
             User.renderProfile();
             this._displayAllParts();
