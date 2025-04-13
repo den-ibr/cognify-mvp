@@ -1,3 +1,5 @@
+import { TaskRewards as reward } from "../tasks/taskRewards.js";
+
 const complexity = {
     1: 'Простая',
     2: 'Средняя',
@@ -8,12 +10,6 @@ const complexityColor = {
     1: 'green',
     2: 'text-yellow',
     3: 'red',
-};
-
-const reward = {
-    1: 25,
-    2: 50,
-    3: 100,
 };
 
 export default class TaskButton {

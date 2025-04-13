@@ -1,3 +1,7 @@
+import UserStorage from "./userStorage.js";
+import User from "./user.js";
+import { TaskRewards } from "./tasks/taskRewards.js";
+
 export default class Task {
     constructor(category, id, name, complexity, answer, source, parts) {
         this.category = category;
@@ -38,10 +42,16 @@ export default class Task {
             container.insertBefore(partContainer, footer);
         }
 
-        MathJax.typesetPromise();
+        while (!(window.MathJax && MathJax.typesetPromise)) {}
+        MathJax.typesetPromise();   
         this.hintButton.onclick = this._displayNextPart.bind(this);
 
         this._renderHintButton();
+        this._renderSubmitButton();
+
+        if (UserStorage.isTaskSolved(this.id, this.category)) {
+            this._displayAllParts();
+        }
     }
 
     _displayNextPart() {
@@ -49,15 +59,16 @@ export default class Task {
         document.getElementById(`part${this.displayedParts}`).style.display = 'flex';
         this.displayedParts++;
         this._renderHintButton();
+        this._renderSubmitButton();
     }
 
-    _displaySolutioon() {
+    _displaySolution() {
         if (!confirm('Если вы откроете решение, вы не сможете получить награду за эту задачу. Открыть решение?')) {
             return;
         }
         this._displayNextPart();
         this.hintButton.style.display = 'none';
-
+        UserStorage.addSolvedTask(this.id, this.category);
     }
 
     _renderHintButton() {
@@ -66,9 +77,40 @@ export default class Task {
         } else {
             this.hintButton.disabled = true;
         }
-        if (this.displayedParts == this.parts.length - 1) {
+        if (this.displayedParts === this.parts.length - 1) {
             this.hintButton.innerText = 'Решение';
-            this.hintButton.onclick = this._displaySolutioon.bind(this);
+            this.hintButton.onclick = this._displaySolution.bind(this);
         }
+    }
+
+    _renderSubmitButton() {
+        if (this.displayedParts === this.parts.length) {
+            this._disableSubmit();
+        }
+        this.submitButton.onclick = this._submit.bind(this);
+    }
+
+    _disableSubmit() {
+        this.submitButton.disabled = true;
+        this.input.disabled = true;
+    }
+
+    _submit() {
+        if (this.input.value == this.answer) {
+            if (UserStorage.addSolvedTask(this.id, this.category)) {
+                User.gems += TaskRewards[this.complexity];
+            }
+            User.renderProfile();
+            this._displayAllParts();
+        } else {
+            this.input.style.border = '2px solid #eb5757';
+        }
+    }
+
+    _displayAllParts() {
+        while (this.displayedParts < this.parts.length) {
+            this._displayNextPart();
+        }
+        this.hintButton.style.display = 'none';
     }
 }

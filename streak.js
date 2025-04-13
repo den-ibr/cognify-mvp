@@ -1,4 +1,4 @@
-import UserStorage from './storage.js';
+import UserStorage from './userStorage.js';
 
 const currentDate = new Date().toISOString().split('T')[0];
 const yesterdayDate = new Date();

@@ -1,4 +1,4 @@
-import UserStorage from '../storage.js';
+import UserStorage from '../userStorage.js';
 import Task from '../task.js';
 
 const categoriesPromise = fetch('tasks/categories.json').then((response) =>
@@ -33,7 +33,7 @@ export default class TaskStorage {
         let taskData = tasks.find((task) => task.id == taskId);
         const rawContent = await this._getRawTask(taskId, category);
         let parts = rawContent.split('\n---\n');
-        if (parts.length == 1) {
+        if (parts.length === 1) {
             parts = rawContent.split('\r\n---\r\n');
         }
         return new Task(

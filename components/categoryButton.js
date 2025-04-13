@@ -1,4 +1,4 @@
-import UserStorage from "../storage.js";
+import UserStorage from "../userStorage.js";
 import TaskList from "./taskList.js";
 
 export default class CategoryButton {

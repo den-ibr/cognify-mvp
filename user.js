@@ -1,4 +1,4 @@
-import UserStorage from './storage.js';
+import UserStorage from './userStorage.js';
 import Streak from './streak.js';
 
 document.getElementById('edit-username').addEventListener('click', () => {
