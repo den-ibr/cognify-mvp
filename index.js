@@ -11,6 +11,6 @@ const categories = TaskStorage.categories;
 const categoryPicker = document.getElementById('category-picker');
 categories.forEach(category => {categoryPicker.appendChild(CategoryButton.create(category.name, category.folderName))});
 
-User.renderProfile();
+await User.renderProfile();
 
 TaskList.render();

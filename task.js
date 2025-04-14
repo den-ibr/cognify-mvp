@@ -63,12 +63,13 @@ export default class Task {
     }
 
     _displaySolution() {
-        if (!confirm('Если вы откроете решение, вы не сможете получить награду за эту задачу. Открыть решение?')) {
+        if (!confirm('Если вы откроете решение задача будет отмечена как решённая, но вы не сможете получить награду за эту задачу. Открыть решение?')) {
             return;
         }
         this._displayNextPart();
         this.hintButton.style.display = 'none';
         UserStorage.addSolvedTask(this.id, this.category);
+        User.renderProfile();
     }
 
     _renderHintButton() {

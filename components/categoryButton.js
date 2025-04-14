@@ -1,4 +1,5 @@
 import UserStorage from "../userStorage.js";
+import StatsView from "./statsView.js";
 import TaskList from "./taskList.js";
 
 export default class CategoryButton {
@@ -27,6 +28,7 @@ export default class CategoryButton {
             }
             document.getElementById(id).classList.add('selected');
             TaskList.render();
+            StatsView.render();
         });
     }
 }

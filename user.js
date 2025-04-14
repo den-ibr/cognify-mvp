@@ -1,5 +1,6 @@
 import UserStorage from './userStorage.js';
 import Streak from './streak.js';
+import StatsView from './components/statsView.js';
 
 document.getElementById('edit-username').addEventListener('click', () => {
     const newName = prompt('Введите новое имя пользователя');
@@ -31,8 +32,9 @@ export default class User {
         this.renderProfile();
     }
 
-    static renderProfile() {
+    static async renderProfile() {
         document.getElementById('username').innerText = this.name;
         document.getElementById('gems').innerText = this.gems;
+        await StatsView.render();
     }
 }

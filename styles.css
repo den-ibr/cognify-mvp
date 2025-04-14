@@ -148,6 +148,49 @@ button {
     align-items: center;
 }
 
+.stats-row-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stats-row-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats-bar-bg {
+    display: flex;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+}
+
+.stats-bar {
+    display: flex;
+    width: 0%;
+    height: 100%;
+    transition-duration: 250ms;
+}
+
+.stats-blue {
+    background-color: #2e92d7;
+}
+
+.stats-green {
+    background-color: #219653;
+}
+
+.stats-yellow {
+    background-color: #f2c94c;
+}
+
+.stats-red {
+    background-color: #eb5757;
+}
+
 
 #task-list {
     display: flex;
@@ -224,6 +267,7 @@ button {
     text-decoration: none;
     color: #000;
 }
+
 
 .grey {
     color: #808080;

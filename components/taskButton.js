@@ -42,7 +42,6 @@ export default class TaskButton {
         taskName.appendChild(icon);
         taskName.appendChild(text);
 
-        console.log(category);
         if (UserStorage.isTaskSolved(task.id, category)) {
             text.classList.add('green');
             icon.src = 'assets/lucide-icons/circle-check-big.svg';

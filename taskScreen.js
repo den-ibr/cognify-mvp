@@ -2,7 +2,7 @@ import TaskStorage from './tasks/taskStorage.js';
 import User from './user.js';
 
 await TaskStorage.ready();
-User.renderProfile();
+await User.renderProfile();
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
