@@ -79,7 +79,7 @@ hr {
     padding: 12px;
     margin: 0;
     border: none;
-    cursor: grab;
+    cursor: pointer;
 }
 
 .secondary-task-part {

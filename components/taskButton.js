@@ -1,4 +1,5 @@
 import { TaskRewards as reward } from "../tasks/taskRewards.js";
+import UserStorage from "../userStorage.js";
 
 const complexity = {
     1: 'Простая',
@@ -19,19 +20,19 @@ export default class TaskButton {
         button.id = `task${task.id}`;
         button.href = `./task?id=${task.id}&cat=${category}`;
 
-        button.appendChild(this._createName(task));
+        button.appendChild(this._createName(task, category));
         button.appendChild(this._createComplexity(task));
         button.appendChild(this._createReward(task));
 
         return button;
     }
 
-    static _createName(task) {
+    static _createName(task, category) {
         const taskName = document.createElement('div');
         taskName.classList.add('task-name');
 
         const icon = document.createElement('img');
-        icon.src = 'assets/lucide-icons/circle.svg'; // TODO переделать и добавить зелёный для сделанных задач
+        icon.src = 'assets/lucide-icons/circle.svg';
         icon.classList.add('icon20');
 
         const text = document.createElement('p');
@@ -40,6 +41,12 @@ export default class TaskButton {
 
         taskName.appendChild(icon);
         taskName.appendChild(text);
+
+        console.log(category);
+        if (UserStorage.isTaskSolved(task.id, category)) {
+            text.classList.add('green');
+            icon.src = 'assets/lucide-icons/circle-check-big.svg';
+        }
 
         return taskName;
     }

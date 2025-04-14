@@ -71,6 +71,6 @@ export default class UserStorage {
     static isTaskSolved(id, category) {
         const solved = this.solvedTasks;
         const task = { id: id, category: category };
-        return solved.some(t => t.id === task.id && t.category === task.category);
+        return solved.some(t => t.id == task.id && t.category == task.category);
     }
 }

@@ -101,6 +101,7 @@ export default class Task {
                 User.gems += TaskRewards[this.complexity];
                 User.streak.incrementIfNeeded();
             }
+            this.input.style.border = 'none';
             User.renderProfile();
             this._displayAllParts();
         } else {

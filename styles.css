@@ -11,7 +11,7 @@ body {
 
 a {
     text-decoration: none;
-    cursor: grab;
+    cursor: pointer;
 }
 
 button:disabled {
@@ -20,7 +20,7 @@ button:disabled {
 }
 
 button {
-    cursor: grab;
+    cursor: pointer;
 }
 
 #container {
