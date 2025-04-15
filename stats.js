@@ -9,8 +9,10 @@ export default class Stats {
 
     static async loadStatsForCategory() {
         this._reset();
+
         const allTasks = await TaskStorage.getTasks();
         const solvedTasks = UserStorage.solvedTasks.filter(t => t.category == UserStorage.selectedCategory.slice(9));
+        console.log(allTasks);
 
         for (const task of allTasks) {
             const complexity = task.complexity;

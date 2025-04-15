@@ -1,0 +1,42 @@
+[
+    {
+        "id": "grape",
+        "name": "Виноград",
+        "price": 0
+    },
+    {
+        "id": "rocket",
+        "name": "Ракета",
+        "price": 300
+    },
+    {
+        "id": "elephant",
+        "name": "Слон",
+        "price": 450
+    },
+    {
+        "id": "banana",
+        "name": "Банан",
+        "price": 500
+    },
+    {
+        "id": "casino",
+        "name": "Казик",
+        "price": 777
+    },
+    {
+        "id": "unicorn",
+        "name": "Единорог",
+        "price": 900
+    },
+    {
+        "id": "beer",
+        "name": "Пиво",
+        "price": 2500
+    },
+    {
+        "id": "nerd",
+        "name": "Нерд",
+        "price": 6000
+    }
+]

@@ -1,6 +1,7 @@
 import UserStorage from './userStorage.js';
 import Streak from './streak.js';
 import StatsView from './components/statsView.js';
+import Store from './store.js';
 
 document.getElementById('edit-username').addEventListener('click', () => {
     const newName = prompt('Введите новое имя пользователя');
@@ -20,7 +21,6 @@ export default class User {
 
     static set gems(value) {
         UserStorage.gems = value;
-        this.renderProfile();
     }
 
     static get name() {
@@ -36,5 +36,13 @@ export default class User {
         document.getElementById('username').innerText = this.name;
         document.getElementById('gems').innerText = this.gems;
         await StatsView.render();
+        await Store.render(this.renderProfile.bind(this));
+        this.renderAvatar();
+    }
+
+    static renderAvatar() {
+        const avatar = document.getElementById('profile-pic');
+        const id = UserStorage.avatar;
+        avatar.src = `assets/fluent-emoji/${id}.png`;
     }
 }

@@ -1,3 +1,5 @@
+import AvatarsStorage from "./avatarsStorage.js";
+
 export default class UserStorage {
     static setDefaultIfEmpty(key, defaultValue) {
         const value = localStorage.getItem(key);
@@ -72,5 +74,37 @@ export default class UserStorage {
         const solved = this.solvedTasks;
         const task = { id: id, category: category };
         return solved.some(t => t.id == task.id && t.category == task.category);
+    }
+
+
+    static get avatars() {
+        return JSON.parse(this.setDefaultIfEmpty('avatars', '["grape"]'));
+    }
+
+    static async purchaseAvatar(id) {
+        const avatars = await AvatarsStorage.getAvatars();
+        const userAvatars = this.avatars;
+        for (const avatar of avatars) {
+            if (avatar.id == id) {
+                if (this.gems > avatar.price) {
+                    this.gems -= avatar.price;
+                    userAvatars.push(id);
+                    localStorage.setItem('avatars', JSON.stringify(userAvatars));
+                } else {
+                    throw new Error('Not enough gems');
+                }
+                return;
+            }
+        }
+        throw new Error('Incorrect id');
+    }
+
+
+    static get avatar() {
+        return this.setDefaultIfEmpty('avatar', 'grape');
+    }
+
+    static set avatar(id) {
+        localStorage.setItem('avatar', id);
     }
 }

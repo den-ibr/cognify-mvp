@@ -13,7 +13,7 @@ export default class StatsRow {
 
     static _createHeader(title, solved, total, id) {
         const header = document.createElement('div');
-        header.classList.add('stats-row-header');
+        header.classList.add('two-value-table-row');
         header.classList.add('inter-regular');
 
         const rowTitle = document.createElement('p');

@@ -9,7 +9,7 @@ export default class StatsView {  // тут код тоже конечно на�
             await this._create();
             return;
         }
-        this._update();
+        await this._update();
     }
 
     static async _create() {
@@ -61,7 +61,6 @@ export default class StatsView {  // тут код тоже конечно на�
 
     static async _update() {
         await Stats.loadStatsForCategory();
-        const profile = document.getElementById('user-profile');
 
         StatsRow.update(0, Stats.total[0], Stats.total[1]);
         StatsRow.update(1, Stats.easy[0], Stats.easy[1]);
