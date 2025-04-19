@@ -42,6 +42,12 @@ export default class Task {
             container.insertBefore(partContainer, footer);
         }
 
+        const sourceEl = document.getElementById('source');
+        sourceEl.href = this.source;
+        if (this.source == "") {
+            sourceEl.style.display = 'none';
+        }
+
         while (!(window.MathJax && MathJax.typesetPromise)) { }
         MathJax.typesetPromise();
         this.hintButton.onclick = this._displayNextPart.bind(this);

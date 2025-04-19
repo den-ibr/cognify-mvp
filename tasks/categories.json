@@ -8,11 +8,7 @@
         "folderName": "calculus"
     },
     {
-        "name": "Дискретная математика",
+        "name": "Школьная математика",
         "folderName": "discrete-maths"
-    },
-    {
-        "name": "Теория вероятностей",
-        "folderName": "probability-theory"
     }
 ]

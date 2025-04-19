@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "id": 1,
+        "name": "Сумма ряда",
+        "complexity": 3,
+        "answer": -0.37,
+        "source": "https://efiminem.github.io/supershad"
+    },
+    {
+        "id": 2,
+        "name": "Несложная производная",
+        "complexity": 1,
+        "answer": -1,
+        "source": "https://avito-analytics-academy.ru"
+    }
+]

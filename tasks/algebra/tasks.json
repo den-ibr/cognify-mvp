@@ -1,16 +1,16 @@
 [
     {
         "id": 1,
-        "name": "Тест",
+        "name": "Простой определитель",
         "complexity": 1,
-        "answer": 42,
-        "source": "https://example.com/test"
+        "answer": 84,
+        "source": ""
     },
     {
         "id": 2,
-        "name": "Задачанейм",
-        "complexity": 3,
-        "answer": 282,
-        "source": "https://example.com/test"
+        "name": "Определитель необратимой матрицы",
+        "complexity": 1,
+        "answer": 21,
+        "source": ""
     }
 ]

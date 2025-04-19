@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "id": 1,
+        "name": "Чёрно-белая доска",
+        "complexity": 2,
+        "answer": 4294967294,
+        "source": "https://olymp.hse.ru/mmo/tasks-math"
+    },
+    {
+        "id": 2,
+        "name": "Новое умножение",
+        "complexity": 3,
+        "answer": 1,
+        "source": "https://olymp.hse.ru/mmo/tasks-math"
+    }
+]
