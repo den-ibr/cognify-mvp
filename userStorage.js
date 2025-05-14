@@ -86,7 +86,7 @@ export default class UserStorage {
         const userAvatars = this.avatars;
         for (const avatar of avatars) {
             if (avatar.id == id) {
-                if (this.gems > avatar.price) {
+                if (this.gems >= avatar.price) {
                     this.gems -= avatar.price;
                     userAvatars.push(id);
                     localStorage.setItem('avatars', JSON.stringify(userAvatars));
