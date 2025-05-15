@@ -12,5 +12,26 @@
         "complexity": 1,
         "answer": -1,
         "source": "https://avito-analytics-academy.ru"
+    },
+    {
+        "id": 3,
+        "name": "Интеграл с заменой подкоренного выражения",
+        "complexity": 2,
+        "answer": 1,
+        "source": ""
+    },
+    {
+        "id": 4,
+        "name": "Интеграл от логарифма через интегрирование по частям",
+        "complexity": 1,
+        "answer": 1,
+        "source": ""
+    },
+    {
+        "id": 5,
+        "name": "Интеграл с параметром в степени",
+        "complexity": 2,
+        "answer": 0.5,
+        "source": ""
     }
 ]

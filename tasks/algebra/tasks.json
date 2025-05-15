@@ -12,5 +12,12 @@
         "complexity": 1,
         "answer": -21,
         "source": ""
+    },
+    {
+        "id": 3,
+        "name": "Обратная матрица второго порядка",
+        "complexity": 1,
+        "answer": -5,
+        "source": ""
     }
 ]
